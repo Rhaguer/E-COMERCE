@@ -1,0 +1,23 @@
+NexoTorque - paquete listo para Netlify
+
+Método 1: Netlify Drop
+1. Inicie sesión en Netlify.
+2. Abra Add new project / Deploy manually (o Netlify Drop).
+3. Arrastre el ZIP NexoTorque_Netlify_Ready.zip o la carpeta descomprimida.
+4. Netlify detectará index.html en la raíz. No requiere comando de build.
+
+Método 2: repositorio Git
+- Build command: dejar vacío.
+- Publish directory: .
+- Base directory: dejar vacío si esta carpeta es la raíz del repositorio.
+
+Archivos Netlify incluidos:
+- netlify.toml
+- _redirects
+- _headers
+
+Notas de funcionamiento:
+- La aplicación es estática y funciona sin backend.
+- Catálogo, carrito, favoritos, pedidos, gestión, ofertas y perfil usan localStorage del navegador.
+- La información persistida es local para cada navegador/dispositivo y no se sincroniza entre usuarios.
+- Las imágenes iniciales de algunos productos se cargan desde URLs externas; si una fuente externa deja de responder, la aplicación usa una imagen local de respaldo.

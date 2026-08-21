@@ -1,0 +1,17 @@
+NexoTorque - Fuentes de imágenes referenciales
+===============================================
+
+El proyecto utiliza fotografías remotas como referencias visuales de productos y taller. Si una fuente remota no está disponible, la interfaz utiliza gráficos locales como respaldo.
+
+Fuentes utilizadas:
+- Wikimedia Commons: Photo-CarBattery.jpg
+- Wikimedia Commons: Engine_oil_filter.JPG
+- Wikimedia Commons: Automobile_brake_pad.jpg
+- Wikimedia Commons: Bosch_H7.JPG
+- Wikimedia Commons: Motor_oil.JPG
+- Wikimedia Commons: Tire_pressure_sensors.jpg
+- Wikimedia Commons: Spark_plug.jpg
+- Pexels: fotografías 5506059 y 11334986
+- Una imagen remota referencial de interfaz OBD2 alojada en Wix Static
+
+Para publicación comercial, reemplazar las imágenes referenciales por material propio o por activos cuya licencia y atribución hayan sido verificadas específicamente para el uso previsto.

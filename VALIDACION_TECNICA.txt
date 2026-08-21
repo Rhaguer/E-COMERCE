@@ -1,0 +1,15 @@
+NexoTorque - Validación técnica del paquete
+===========================================
+
+- JavaScript: sintaxis validada con Node.js.
+- HTML: sin IDs duplicados.
+- Referencias locales: todos los archivos requeridos existen.
+- Botones estáticos: todos poseen evento, acción, navegación, cierre o envío de formulario asociado.
+- Persistencia: catálogo, carrito, favoritos, historial, pedidos y perfil usan localStorage.
+- Inventario: el carrito limita cantidades al stock y el checkout vuelve a validar antes de registrar el pedido.
+- Pedidos: al confirmar se registra una orden local y se descuenta el inventario.
+- Gestión: productos, ofertas, pedidos, importación/exportación y carga de imágenes integradas.
+- Responsive: reglas específicas para escritorio, tablet y móvil incluidas en styles.css.
+- Terminología anterior retirada completamente de la interfaz, código y documentación.
+
+Observación: las imágenes remotas dependen de la disponibilidad del proveedor externo; cada tarjeta posee fallback local para evitar imágenes rotas.

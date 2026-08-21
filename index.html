@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11161c">
+  <title>NexoTorque | Repuestos, accesorios y tecnología automotriz</title>
+  <meta name="description" content="Tienda de repuestos, accesorios y tecnología automotriz con catálogo, stock, ofertas, carrito y gestión comercial.">
+  <link rel="icon" href="assets/nexotorque-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.2-5 4-7 8-7s6.8 2 8 7"></path></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"></circle><circle cx="19" cy="20" r="1.5"></circle><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 8H6"></path></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"></path></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></symbol>
+  </svg>
+
+  <div class="top-strip">
+    <div class="shell top-strip-inner">
+      <span>Despacho nacional · Retiro disponible · Stock actualizado</span>
+      <span>Soporte NexoTorque <b>+56 2 2890 4720</b></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-main shell">
+      <button class="icon-btn mobile-only" id="menuBtn" aria-label="Abrir menú"><svg><use href="#i-menu"></use></svg></button>
+      <a class="brand" href="#" data-nav="home" aria-label="NexoTorque inicio">
+        <img class="brand-logo" src="assets/nexotorque-logo.svg" alt="NexoTorque">
+      </a>
+
+      <div class="search-wrap">
+        <svg class="search-leading"><use href="#i-search"></use></svg>
+        <input id="globalSearch" type="search" autocomplete="off" placeholder="Buscar por producto, SKU, marca, categoría o vehículo..." aria-label="Buscar productos">
+        <button id="searchBtn" class="search-btn" aria-label="Buscar"><svg><use href="#i-search"></use></svg></button>
+        <div id="suggestions" class="suggestions hidden"></div>
+      </div>
+
+      <nav class="header-actions" aria-label="Acciones de tienda">
+        <button class="header-action" id="accountBtn"><svg><use href="#i-user"></use></svg><small>Mi cuenta</small></button>
+        <button class="header-action" id="favoritesBtn"><svg><use href="#i-heart"></use></svg><small>Favoritos</small><b id="favCount" class="counter">0</b></button>
+        <button class="header-action" id="cartBtn"><svg><use href="#i-cart"></use></svg><small>Carrito</small><b id="cartCount" class="counter">0</b></button>
+        <button class="header-action manage-action" id="manageBtn"><svg><use href="#i-gear"></use></svg><small>Gestión</small></button>
+      </nav>
+    </div>
+
+    <div class="category-bar">
+      <div class="shell category-row" id="categoryNav"></div>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu hidden">
+    <button data-nav="home">Inicio</button>
+    <button data-nav="catalog">Catálogo</button>
+    <button id="mobileFavBtn">Favoritos</button>
+    <button id="mobileCartBtn">Carrito</button>
+    <button id="mobileManageBtn">Gestión de tienda</button>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow light">AUTOMOTRIZ · REPUESTOS · TECNOLOGÍA</span>
+          <h1>La pieza correcta. El rendimiento que esperas.</h1>
+          <p>Repuestos, diagnóstico y tecnología automotriz con stock actualizado, compatibilidad clara, ofertas activas y gestión completa de pedidos.</p>
+          <div class="hero-actions">
+            <button class="btn accent" id="shopNowBtn">Explorar catálogo <svg><use href="#i-arrow"></use></svg></button>
+            <button class="btn hero-ghost" id="offersBtn">Ver ofertas</button>
+          </div>
+          <div class="hero-badges">
+            <span><b id="heroStock">0</b> unidades en inventario</span>
+            <span><b id="heroOffers">0</b> ofertas activas</span>
+            <span><b id="heroBrands">0</b> marcas</span>
+          </div>
+        </div>
+        <div class="hero-photo" aria-label="Repuestos automotrices">
+          <div class="hero-photo-overlay">
+            <span class="hero-kicker">NEXO<span>TORQUE</span> SELECT</span>
+            <b>Selección técnica para mantenimiento, seguridad y conectividad.</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust shell" aria-label="Servicios">
+      <article><div class="trust-icon">01</div><div><b>Despacho</b><small>Cobertura nacional y retiro</small></div></article>
+      <article><div class="trust-icon">02</div><div><b>Compra protegida</b><small>Validación de stock antes de ordenar</small></div></article>
+      <article><div class="trust-icon">03</div><div><b>Garantía</b><small>Información por producto</small></div></article>
+      <article><div class="trust-icon">04</div><div><b>Asistencia</b><small>TorqueBot conoce todo el catálogo</small></div></article>
+    </section>
+
+    <section class="promo-banner shell" id="promoBanner">
+      <div class="promo-media"></div>
+      <div class="promo-content"><span class="eyebrow light">OFERTA DESTACADA</span><h2 id="promoTitle">Equipa tu vehículo con precio especial</h2><p id="promoText">Revisa las ofertas activas seleccionadas por NexoTorque.</p><button class="btn accent" id="promoCta">Ver oferta <svg><use href="#i-arrow"></use></svg></button></div>
+      <div class="promo-stat"><small>Hasta</small><b id="promoDiscount">0%</b><span>de descuento</span></div>
+    </section>
+
+    <section class="section shell category-showcase">
+      <div class="section-head">
+        <div><span class="eyebrow">COMPRA POR CATEGORÍA</span><h2>Encuentra la pieza correcta más rápido</h2></div>
+      </div>
+      <div id="categoryCards" class="category-cards"></div>
+    </section>
+
+    <section class="section shell" id="featuredSection">
+      <div class="section-head">
+        <div><span class="eyebrow">SELECCIÓN NEXOTORQUE</span><h2>Productos destacados</h2></div>
+        <button class="text-btn" id="viewAllBtn">Ver todo el catálogo <svg><use href="#i-arrow"></use></svg></button>
+      </div>
+      <div id="featuredGrid" class="product-grid"></div>
+    </section>
+
+    <section class="section shell hidden" id="offersSection">
+      <div class="section-head">
+        <div><span class="eyebrow">PRECIOS ESPECIALES</span><h2>Ofertas activas</h2></div>
+        <span id="offerCountdown" class="section-note"></span>
+      </div>
+      <div id="offersGrid" class="product-grid"></div>
+    </section>
+
+    <section class="section catalog shell" id="catalog">
+      <div class="breadcrumbs"><button data-nav="home">Inicio</button><span>/</span><span>Catálogo</span></div>
+      <div class="section-head catalog-title">
+        <div><span class="eyebrow">CATÁLOGO COMPLETO</span><h2>Repuestos y accesorios</h2></div>
+        <span id="resultCount" class="muted"></span>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="filters" id="filtersPanel">
+          <div class="filter-title"><b>Filtrar productos</b><button id="clearFiltersBtn">Restablecer</button></div>
+          <label>Categoría<select id="filterCategory"></select></label>
+          <label>Marca<select id="filterBrand"></select></label>
+          <label>Precio máximo<input id="priceRange" type="range" min="10000" max="500000" step="5000" value="500000"><span id="priceRangeLabel"></span></label>
+          <label class="check-row"><input id="stockOnly" type="checkbox"> Sólo productos disponibles</label>
+          <label class="check-row"><input id="offersOnly" type="checkbox"> Sólo productos en oferta</label>
+        </aside>
+
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <button class="btn compact mobile-only" id="filterToggle">Filtros</button>
+            <label>Ordenar por<select id="sortSelect"><option value="featured">Destacados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a menor</option><option value="name">Nombre A-Z</option><option value="stock">Mayor stock</option><option value="discount">Mayor descuento</option></select></label>
+          </div>
+          <div id="productGrid" class="product-grid"></div>
+          <div id="emptyCatalog" class="empty-state hidden"><div class="empty-symbol">⌕</div><h3>No encontramos productos</h3><p>Prueba con otra búsqueda o ajusta los filtros.</p><button class="btn accent" id="resetEmptyBtn">Restablecer filtros</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell hidden" id="historySection">
+      <div class="section-head"><div><span class="eyebrow">TU NAVEGACIÓN</span><h2>Vistos recientemente</h2></div></div>
+      <div id="historyGrid" class="product-grid compact-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="footer-about"><img class="footer-logo" src="assets/nexotorque-logo-light.svg" alt="NexoTorque"><p>Repuestos, mantenimiento, diagnóstico y tecnología automotriz para particulares y talleres.</p><div class="social-row"><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></div></div>
+      <div><b>Comprar</b><button data-nav="catalog">Catálogo</button><button id="footerOffers">Ofertas</button><button id="footerFav">Favoritos</button></div>
+      <div><b>Servicio</b><button id="footerShipping">Despacho y retiro</button><button id="footerWarranty">Garantías</button><button id="footerChat">Asistente TorqueBot</button></div>
+      <div><b>Contacto</b><a href="tel:+56228904720">+56 2 2890 4720</a><a href="mailto:ventas@nexotorque.cl">ventas@nexotorque.cl</a><p>Av. Motor 2450, Huechuraba, Santiago</p><p>Lun–Vie 09:00–18:30 · Sáb 10:00–14:00</p></div>
+    </div>
+    <div class="shell footer-bottom"><span>© 2026 NexoTorque. Todos los derechos reservados.</span><span><button id="footerManage">Gestión de tienda</button><button id="footerAccount">Mi cuenta</button></span></div>
+  </footer>
+
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="modal-backdrop" data-close="product"></div>
+    <div class="modal-card product-modal-card"><button class="modal-close" data-close="product" aria-label="Cerrar">×</button><div id="productModalContent"></div></div>
+  </div>
+
+  <div id="favoritesModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="favorites"></div>
+    <div class="modal-card"><button class="modal-close" data-close="favorites">×</button><span class="eyebrow">TU SELECCIÓN</span><h2>Productos favoritos</h2><div id="favoritesGrid" class="product-grid modal-grid"></div><div id="emptyFavorites" class="empty-state hidden"><div class="empty-symbol">♡</div><h3>No tienes favoritos</h3><p>Guarda productos con el botón de corazón.</p></div></div>
+  </div>
+
+  <aside id="cartDrawer" class="drawer hidden" aria-label="Carrito">
+    <div class="drawer-backdrop" data-close="cart"></div>
+    <div class="drawer-panel">
+      <div class="drawer-head"><div><span class="eyebrow">TU COMPRA</span><h2>Carrito</h2></div><button class="modal-close static-close" data-close="cart">×</button></div>
+      <div id="cartItems" class="cart-items"></div>
+      <div id="emptyCart" class="empty-state hidden"><div class="empty-symbol"><svg><use href="#i-cart"></use></svg></div><h3>Tu carrito está vacío</h3><p>Agrega productos desde el catálogo.</p></div>
+      <div id="cartSummary" class="cart-summary"><div><span>Subtotal</span><b id="cartSubtotal"></b></div><div><span>Ahorro por ofertas</span><b id="cartSavings"></b></div><div><span>Despacho estimado</span><b id="cartShipping"></b></div><div class="total-row"><span>Total</span><b id="cartTotal"></b></div><button class="btn accent wide" id="checkoutBtn">Continuar compra</button><button class="text-btn danger" id="clearCartBtn">Vaciar carrito</button></div>
+    </div>
+  </aside>
+
+  <div id="checkoutModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="checkout"></div>
+    <div class="modal-card checkout-card">
+      <button class="modal-close" data-close="checkout">×</button>
+      <div class="checkout-header"><span class="eyebrow">FINALIZAR COMPRA</span><h2>Datos de pedido</h2><p>Revisa tus datos, modalidad de entrega y medio de pago.</p></div>
+      <form id="checkoutForm" novalidate>
+        <div class="checkout-layout">
+          <div>
+            <div class="form-section"><h3>Datos del comprador</h3><div class="form-grid"><label>Nombre completo<input name="name" required minlength="3"></label><label>RUT<input name="rut" required placeholder="12.345.678-5"></label><label>Correo<input name="email" type="email" required></label><label>Teléfono<input name="phone" required placeholder="+56 9 1234 5678"></label></div></div>
+            <div class="form-section"><h3>Entrega</h3><div class="choice-grid delivery-switch"><label><input type="radio" name="delivery" value="shipping" checked><span><b>Despacho</b><small>Entrega en dirección indicada</small></span></label><label><input type="radio" name="delivery" value="pickup"><span><b>Retiro</b><small>Retiro sin costo</small></span></label></div><div id="shippingFields" class="form-grid"><label class="span-2">Dirección<input name="address" required></label><label>Comuna<input name="commune" required></label><label>Región<select name="region" required><option value="">Seleccionar</option><option>Región Metropolitana</option><option>Valparaíso</option><option>O'Higgins</option><option>Maule</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Antofagasta</option><option>Coquimbo</option></select></label></div></div>
+            <div class="form-section"><h3>Medio de pago</h3><div class="choice-grid payment-grid"><label><input type="radio" name="payment" value="Webpay Plus" checked><span><b>Webpay Plus</b><small>Tarjetas bancarias</small></span></label><label><input type="radio" name="payment" value="Tarjeta de crédito"><span><b>Crédito</b><small>Tarjeta bancaria</small></span></label><label><input type="radio" name="payment" value="Tarjeta de débito"><span><b>Débito</b><small>Tarjeta bancaria</small></span></label><label><input type="radio" name="payment" value="Transferencia"><span><b>Transferencia</b><small>Coordinación de pago</small></span></label></div></div>
+            <label class="save-profile"><input type="checkbox" name="saveProfile" checked> Guardar estos datos en Mi cuenta</label>
+            <div id="checkoutErrors" class="form-errors hidden"></div>
+          </div>
+          <aside class="order-box"><h3>Resumen de compra</h3><div id="checkoutItems"></div><div class="summary-line"><span>Subtotal</span><b id="checkoutSubtotal"></b></div><div class="summary-line"><span>Ahorro</span><b id="checkoutSavings"></b></div><div class="summary-line"><span>Despacho</span><b id="checkoutShipping"></b></div><div class="summary-line total-row"><span>Total</span><b id="checkoutTotal"></b></div><button class="btn accent wide" type="submit">Crear pedido</button><small class="order-disclaimer">El pedido queda registrado en tu historial y descuenta el stock disponible.</small></aside>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="orderModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="order"></div>
+    <div class="modal-card order-success"><div class="success-icon">✓</div><span class="eyebrow">PEDIDO REGISTRADO</span><h2>Tu orden fue creada</h2><p id="orderMessage"></p><button class="btn accent" data-close="order">Seguir comprando</button><button class="btn ghost" id="viewOrderAccountBtn">Ver en Mi cuenta</button></div>
+  </div>
+
+  <div id="accountModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="account"></div>
+    <div class="modal-card account-card"><button class="modal-close" data-close="account">×</button><span class="eyebrow">ÁREA CLIENTE</span><h2>Mi cuenta</h2><div class="account-layout"><form id="profileForm" class="profile-panel"><h3>Datos guardados</h3><label>Nombre<input name="name"></label><label>RUT<input name="rut"></label><label>Correo<input name="email" type="email"></label><label>Teléfono<input name="phone"></label><label>Dirección<input name="address"></label><label>Comuna<input name="commune"></label><label>Región<input name="region"></label><button class="btn accent" type="submit">Guardar datos</button></form><div><h3>Historial de pedidos</h3><div id="accountOrders" class="orders-list"></div></div></div></div>
+  </div>
+
+  <div id="managementModal" class="modal hidden management-modal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="management"></div>
+    <div class="modal-card management-card">
+      <button class="modal-close" data-close="management">×</button>
+      <div class="management-head"><div><span class="eyebrow">PANEL NEXOTORQUE</span><h2>Gestión de tienda</h2></div><div class="management-actions"><button class="btn compact" id="exportCatalogBtn">Exportar catálogo</button><label class="btn compact file-btn">Importar catálogo<input id="importCatalogInput" type="file" accept="application/json"></label></div></div>
+      <div class="management-tabs" role="tablist"><button data-mtab="dashboard" class="active">Resumen</button><button data-mtab="products">Productos</button><button data-mtab="offers">Ofertas</button><button data-mtab="orders">Pedidos</button></div>
+      <section class="management-view" data-mview="dashboard"><div id="managementKpis" class="kpi-grid"></div><div class="management-panels"><div class="admin-panel"><h3>Stock crítico</h3><div id="lowStockList"></div></div><div class="admin-panel"><h3>Actividad comercial</h3><div id="commercialSummary"></div></div></div></section>
+      <section class="management-view hidden" data-mview="products"><div class="admin-toolbar"><div class="admin-search"><svg><use href="#i-search"></use></svg><input id="adminProductSearch" placeholder="Buscar producto o SKU"></div><button class="btn accent" id="newProductBtn">+ Nuevo producto</button></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Producto</th><th>SKU</th><th>Precio</th><th>Stock</th><th>Estado</th><th></th></tr></thead><tbody id="adminProductsBody"></tbody></table></div></section>
+      <section class="management-view hidden" data-mview="offers"><div class="offer-manager"><form id="offerForm" class="offer-form"><h3>Crear o modificar oferta</h3><label>Producto<select name="productId" id="offerProductSelect" required></select></label><label>Precio oferta<input name="offerPrice" type="number" min="1" required></label><label>Vigencia hasta<input name="offerUntil" type="date"></label><button class="btn accent" type="submit">Guardar oferta</button></form><div><h3>Ofertas activas</h3><div id="adminOffersList" class="admin-offers"></div></div></div></section>
+      <section class="management-view hidden" data-mview="orders"><div class="admin-toolbar"><div><b id="ordersAdminCount">0 pedidos</b><small class="muted block">Actualiza el estado de cada pedido.</small></div><button class="btn compact" id="exportOrdersBtn">Exportar pedidos CSV</button></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Orden</th><th>Cliente</th><th>Total</th><th>Entrega</th><th>Estado</th><th>Fecha</th></tr></thead><tbody id="adminOrdersBody"></tbody></table></div></section>
+    </div>
+  </div>
+
+  <div id="productEditorModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="productEditor"></div>
+    <div class="modal-card editor-card"><button class="modal-close" data-close="productEditor">×</button><span class="eyebrow">CATÁLOGO</span><h2 id="productEditorTitle">Nuevo producto</h2><form id="productEditorForm" novalidate><input type="hidden" name="id"><div class="editor-grid"><label>Nombre<input name="name" required></label><label>SKU<input name="sku" required></label><label>Marca<input name="brand" required></label><label>Categoría<input name="category" required></label><label>Precio CLP<input name="price" type="number" min="1" required></label><label>Stock<input name="stock" type="number" min="0" required></label><label class="span-2">Compatibilidad<input name="compatibility" required></label><label class="span-2">Descripción<textarea name="description" rows="3" required></textarea></label><label class="span-2">URL de imagen<input name="imageUrl" placeholder="https://..."></label><label class="span-2 upload-zone">Cargar imagen<input id="productImageFile" type="file" accept="image/*"><span id="productImageStatus">JPG, PNG o WebP. La imagen se optimiza antes de guardarse.</span></label><div class="span-2 editor-checks"><label><input name="featured" type="checkbox"> Producto destacado</label><label><input name="active" type="checkbox" checked> Publicado</label></div></div><div id="productEditorErrors" class="form-errors hidden"></div><div class="editor-actions"><button type="button" class="btn ghost" data-close="productEditor">Cancelar</button><button type="submit" class="btn accent">Guardar producto</button></div></form></div>
+  </div>
+
+  <button id="chatToggle" class="chat-toggle" aria-label="Abrir asistente TorqueBot"><span class="chat-pulse"></span><svg><use href="#i-chat"></use></svg><span><b>TorqueBot</b><small>Asistente de compra</small></span></button>
+  <section id="chatPanel" class="chat-panel hidden" aria-label="Chatbot NexoTorque">
+    <header><div class="bot-avatar">NT</div><div><b>TorqueBot</b><small>Especialista del catálogo</small></div><span class="online-dot"></span><button id="chatClose" aria-label="Cerrar chat">×</button></header>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div id="chatQuick" class="chat-quick"><button data-chat="¿Qué productos tienen oferta?">Ofertas</button><button data-chat="¿Cuál es el producto más barato?">Más barato</button><button data-chat="¿Qué scanner OBD2 tienen?">OBD2</button><button data-chat="¿Cómo funciona el despacho?">Despacho</button></div>
+    <form id="chatForm" class="chat-form"><input id="chatInput" autocomplete="off" placeholder="Pregunta por un producto, precio, stock..." aria-label="Mensaje para TorqueBot"><button type="submit" aria-label="Enviar"><svg><use href="#i-arrow"></use></svg></button></form>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

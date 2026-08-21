@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 96" role="img" aria-labelledby="t d">
+  <title id="t">NexoTorque</title><desc id="d">Logo claro NexoTorque</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffad38"/><stop offset="1" stop-color="#f25a1d"/></linearGradient></defs>
+  <g transform="translate(3 5)">
+    <circle cx="43" cy="43" r="38" fill="#0d1117" stroke="#313943"/>
+    <path d="M13 50a31 31 0 0 1 60-10" fill="none" stroke="#303945" stroke-width="6" stroke-linecap="round"/>
+    <path d="M19 49a25 25 0 0 1 49-8" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M43 44 62 25" stroke="#ff8124" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="43" cy="44" r="5" fill="#fff"/>
+    <path d="M24 63V34l20 29V34M51 34h22M62 34v29" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="96" y="51" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800" fill="#f8fafc" letter-spacing="-.7">Nexo</text>
+  <text x="186" y="51" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800" fill="#ff8124" letter-spacing="-.7">Torque</text>
+  <text x="98" y="72" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#a9b2be" letter-spacing="3.7">AUTOMOTIVE MARKET</text>
+</svg>
