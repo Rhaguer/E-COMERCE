@@ -35,7 +35,7 @@
     <div class="header-main shell">
       <button class="icon-btn mobile-only" id="menuBtn" aria-label="Abrir menú"><svg><use href="#i-menu"></use></svg></button>
       <a class="brand" href="#" data-nav="home" aria-label="Axoryn Auto inicio">
-        <img class="brand-logo" src="assets/axoryn-logo.svg" alt="Axoryn Auto">
+        <img class="brand-logo" src="assets/axoryn-logo-light.svg" alt="Axoryn Auto">
       </a>
 
       <div class="search-wrap">
@@ -54,13 +54,14 @@
     </div>
 
     <div class="category-bar">
-      <div class="shell category-row"><div id="categoryNav"></div><button class="tech-nav-btn" id="techBtn">Tecnologías</button></div>
+      <div class="shell category-row"><button class="offers-nav-btn" id="navOffersBtn">⚡ Ofertas</button><div id="categoryNav"></div><button class="tech-nav-btn" id="techBtn">Tecnologías</button></div>
     </div>
   </header>
 
   <div id="mobileMenu" class="mobile-menu hidden">
     <button data-nav="home">Inicio</button>
     <button data-nav="catalog">Catálogo</button>
+    <button id="mobileOffersBtn">⚡ Ofertas</button>
     <button id="mobileTechBtn">Tecnologías</button>
     <button id="mobileFavBtn">Favoritos</button>
     <button id="mobileCartBtn">Carrito</button>
@@ -223,7 +224,7 @@
           <div>
             <div class="form-section"><h3>Datos del comprador</h3><div class="form-grid"><label>Nombre completo<input name="name" required minlength="3"></label><label>RUT<input name="rut" required placeholder="12.345.678-5"></label><label>Correo<input name="email" type="email" required></label><label>Teléfono<input name="phone" required placeholder="+56 9 1234 5678"></label></div></div>
             <div class="form-section"><h3>Entrega</h3><div class="choice-grid delivery-switch"><label><input type="radio" name="delivery" value="shipping" checked><span><b>Despacho</b><small>Entrega en dirección indicada</small></span></label><label><input type="radio" name="delivery" value="pickup"><span><b>Retiro</b><small>Retiro sin costo</small></span></label></div><div id="shippingFields" class="form-grid"><label class="span-2">Dirección<input name="address" required></label><label>Comuna<input name="commune" required></label><label>Región<select name="region" required><option value="">Seleccionar</option><option>Región Metropolitana</option><option>Valparaíso</option><option>O'Higgins</option><option>Maule</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Antofagasta</option><option>Coquimbo</option></select></label></div></div>
-            <div class="form-section"><h3>Medio de pago</h3><div class="choice-grid payment-grid"><label><input type="radio" name="payment" value="Webpay Plus Sandbox" checked><span><b>Webpay Plus · demo</b><small>Sandbox: sin cobro real</small></span></label><label><input type="radio" name="payment" value="Tarjeta demo"><span><b>Tarjeta demo</b><small>Simulación local</small></span></label><label><input type="radio" name="payment" value="Débito demo"><span><b>Débito demo</b><small>Simulación local</small></span></label><label><input type="radio" name="payment" value="Transferencia demo"><span><b>Transferencia demo</b><small>Sin datos bancarios</small></span></label></div><p class="demo-payment-note">Ambiente demostrativo: nunca ingreses datos reales de pago.</p></div>
+            <div class="form-section"><h3>Medio de pago</h3><div class="choice-grid payment-grid"><label><input type="radio" name="payment" value="Webpay Plus Sandbox" checked><span><b>Webpay Plus · demo</b><small>Sandbox: sin cobro real</small></span></label><label><input type="radio" name="payment" value="Tarjeta demo"><span><b>Tarjeta demo</b><small>Simulación local</small></span></label><label><input type="radio" name="payment" value="Débito demo"><span><b>Débito demo</b><small>Simulación local</small></span></label><label><input type="radio" name="payment" value="Transferencia demo"><span><b>Transferencia demo</b><small>Sin datos bancarios</small></span></label></div><div id="cardDemoFields" class="card-demo-fields"><div class="secure-payment-label">🔒 Pago cifrado de demostración · no ingreses datos reales</div><label>Nombre en la tarjeta<input name="cardholder" autocomplete="cc-name" placeholder="NOMBRE APELLIDO"></label><label>Número de tarjeta demo<input name="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="4000 0000 0000 0002" maxlength="19"></label><div><label>Vencimiento<input name="cardExpiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5"></label><label>CVV demo<input name="cardCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4"></label></div></div><p class="demo-payment-note">Ambiente demostrativo: los datos no se envían ni se almacenan. Usa datos ficticios.</p></div>
             <label class="save-profile"><input type="checkbox" name="saveProfile" checked> Guardar estos datos en Mi cuenta</label>
             <div id="checkoutErrors" class="form-errors hidden"></div>
           </div>
