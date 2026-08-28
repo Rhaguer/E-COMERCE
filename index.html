@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#11161c">
-  <title>NexoTorque | Repuestos, accesorios y tecnología automotriz</title>
-  <meta name="description" content="Tienda de repuestos, accesorios y tecnología automotriz con catálogo, stock, ofertas, carrito y gestión comercial.">
-  <link rel="icon" href="assets/nexotorque-logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#081a2c">
+  <title>Axoryn Auto | Repuestos y tecnología automotriz</title>
+  <meta name="description" content="Axoryn Auto: prototipo e-commerce de repuestos y tecnología automotriz, con catálogo, compatibilidad, ofertas, carrito y checkout demo.">
+  <meta property="og:title" content="Axoryn Auto | Tecnología que mueve tu ruta">
+  <meta property="og:description" content="Repuestos, accesorios y tecnología automotriz. Demo e-commerce responsive.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/axoryn-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,15 +27,15 @@
   <div class="top-strip">
     <div class="shell top-strip-inner">
       <span>Despacho nacional · Retiro disponible · Stock actualizado</span>
-      <span>Soporte NexoTorque <b>+56 2 2890 4720</b></span>
+      <span>Soporte Axoryn Auto <b>+56 2 2890 4720</b></span>
     </div>
   </div>
 
   <header class="site-header">
     <div class="header-main shell">
       <button class="icon-btn mobile-only" id="menuBtn" aria-label="Abrir menú"><svg><use href="#i-menu"></use></svg></button>
-      <a class="brand" href="#" data-nav="home" aria-label="NexoTorque inicio">
-        <img class="brand-logo" src="assets/nexotorque-logo.svg" alt="NexoTorque">
+      <a class="brand" href="#" data-nav="home" aria-label="Axoryn Auto inicio">
+        <img class="brand-logo" src="assets/axoryn-logo.svg" alt="Axoryn Auto">
       </a>
 
       <div class="search-wrap">
@@ -51,13 +54,14 @@
     </div>
 
     <div class="category-bar">
-      <div class="shell category-row" id="categoryNav"></div>
+      <div class="shell category-row"><div id="categoryNav"></div><button class="tech-nav-btn" id="techBtn">Tecnologías</button></div>
     </div>
   </header>
 
   <div id="mobileMenu" class="mobile-menu hidden">
     <button data-nav="home">Inicio</button>
     <button data-nav="catalog">Catálogo</button>
+    <button id="mobileTechBtn">Tecnologías</button>
     <button id="mobileFavBtn">Favoritos</button>
     <button id="mobileCartBtn">Carrito</button>
     <button id="mobileManageBtn">Gestión de tienda</button>
@@ -98,7 +102,7 @@
 
     <section class="promo-banner shell" id="promoBanner">
       <div class="promo-media"></div>
-      <div class="promo-content"><span class="eyebrow light">OFERTA DESTACADA</span><h2 id="promoTitle">Equipa tu vehículo con precio especial</h2><p id="promoText">Revisa las ofertas activas seleccionadas por NexoTorque.</p><button class="btn accent" id="promoCta">Ver oferta <svg><use href="#i-arrow"></use></svg></button></div>
+      <div class="promo-content"><span class="eyebrow light">OFERTA DESTACADA</span><h2 id="promoTitle">Equipa tu vehículo con precio especial</h2><p id="promoText">Revisa las ofertas activas seleccionadas por Axoryn Auto.</p><button class="btn accent" id="promoCta">Ver oferta <svg><use href="#i-arrow"></use></svg></button></div>
       <div class="promo-stat"><small>Hasta</small><b id="promoDiscount">0%</b><span>de descuento</span></div>
     </section>
 
@@ -111,7 +115,7 @@
 
     <section class="section shell" id="featuredSection">
       <div class="section-head">
-        <div><span class="eyebrow">SELECCIÓN NEXOTORQUE</span><h2>Productos destacados</h2></div>
+        <div><span class="eyebrow">SELECCIÓN AXORYN</span><h2>Productos destacados</h2></div>
         <button class="text-btn" id="viewAllBtn">Ver todo el catálogo <svg><use href="#i-arrow"></use></svg></button>
       </div>
       <div id="featuredGrid" class="product-grid"></div>
@@ -157,19 +161,37 @@
       <div class="section-head"><div><span class="eyebrow">TU NAVEGACIÓN</span><h2>Vistos recientemente</h2></div></div>
       <div id="historyGrid" class="product-grid compact-grid"></div>
     </section>
+
+    <section class="section shell technologies" id="technologies" aria-labelledby="techTitle">
+      <div class="section-head"><div><span class="eyebrow">TRANSPARENCIA TÉCNICA</span><h2 id="techTitle">Tecnologías utilizadas</h2></div><p class="muted tech-intro">Un prototipo estático, rápido y listo para desplegar.</p></div>
+      <div class="tech-grid">
+        <article><b>HTML5 semántico</b><p>Estructura accesible para navegación, formularios y diálogos.</p></article>
+        <article><b>CSS3 responsivo</b><p>Diseño adaptable, paleta, animaciones y estados de interacción.</p></article>
+        <article><b>JavaScript ES2022</b><p>Catálogo, filtros, carrito, validaciones y vistas dinámicas.</p></article>
+        <article><b>localStorage</b><p>Conserva carrito, favoritos, perfil y pedidos en este navegador.</p></article>
+        <article><b>Webpay Plus Sandbox</b><p>Flujo de pago demostrativo; no transmite ni procesa tarjetas reales.</p></article>
+        <article><b>Netlify</b><p>Publicación estática con redirecciones y cabeceras de seguridad.</p></article>
+        <article><b>SVG</b><p>Logo e iconografía vectorial, liviana y nítida en cualquier pantalla.</p></article>
+        <article><b>SEO básico</b><p>Metadatos, idioma, jerarquía de encabezados y enlaces descriptivos.</p></article>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="shell footer-grid">
-      <div class="footer-about"><img class="footer-logo" src="assets/nexotorque-logo-light.svg" alt="NexoTorque"><p>Repuestos, mantenimiento, diagnóstico y tecnología automotriz para particulares y talleres.</p><div class="social-row"><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></div></div>
+      <div class="footer-about"><img class="footer-logo" src="assets/axoryn-logo-light.svg" alt="Axoryn Auto"><p>Repuestos, mantenimiento, diagnóstico y tecnología automotriz para particulares y talleres.</p><div class="social-row"><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></div></div>
       <div><b>Comprar</b><button data-nav="catalog">Catálogo</button><button id="footerOffers">Ofertas</button><button id="footerFav">Favoritos</button></div>
       <div><b>Servicio</b><button id="footerShipping">Despacho y retiro</button><button id="footerWarranty">Garantías</button><button id="footerChat">Asistente TorqueBot</button></div>
-      <div><b>Contacto</b><a href="tel:+56228904720">+56 2 2890 4720</a><a href="mailto:ventas@nexotorque.cl">ventas@nexotorque.cl</a><p>Av. Motor 2450, Huechuraba, Santiago</p><p>Lun–Vie 09:00–18:30 · Sáb 10:00–14:00</p></div>
+      <div><b>Contacto</b><a href="tel:+56228904720">+56 2 2890 4720</a><a href="mailto:hola@axoryn-auto.demo">hola@axoryn-auto.demo</a><p>Av. Motor 2450, Huechuraba, Santiago</p><p>Lun–Vie 09:00–18:30 · Sáb 10:00–14:00</p></div>
     </div>
-    <div class="shell footer-bottom"><span>© 2026 NexoTorque. Todos los derechos reservados.</span><span><button id="footerManage">Gestión de tienda</button><button id="footerAccount">Mi cuenta</button></span></div>
+    <div class="shell footer-bottom"><span>© 2026 Axoryn Auto. Demo comercial; precios y stock son referenciales.</span><span><button id="footerManage">Gestión de tienda</button><button id="footerAccount">Mi cuenta</button></span></div>
   </footer>
 
   <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+
+  <div id="flashOfferPopup" class="flash-offer hidden" role="dialog" aria-modal="true" aria-labelledby="flashOfferTitle">
+    <div class="flash-offer-card"><button class="modal-close" id="closeFlashOffer" aria-label="Cerrar oferta">×</button><span class="eyebrow">OFERTA DE ÚLTIMO MINUTO</span><h2 id="flashOfferTitle">Precio especial por tiempo limitado</h2><p id="flashOfferText"></p><div class="flash-offer-actions"><button class="btn accent" id="flashOfferCta">Ver oferta</button><button class="text-btn" id="dismissFlashOffer">No mostrar nuevamente</button></div><small>Promoción demo. Vigencia, precio y stock son referenciales.</small></div>
+  </div>
 
   <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
     <div class="modal-backdrop" data-close="product"></div>
@@ -201,7 +223,7 @@
           <div>
             <div class="form-section"><h3>Datos del comprador</h3><div class="form-grid"><label>Nombre completo<input name="name" required minlength="3"></label><label>RUT<input name="rut" required placeholder="12.345.678-5"></label><label>Correo<input name="email" type="email" required></label><label>Teléfono<input name="phone" required placeholder="+56 9 1234 5678"></label></div></div>
             <div class="form-section"><h3>Entrega</h3><div class="choice-grid delivery-switch"><label><input type="radio" name="delivery" value="shipping" checked><span><b>Despacho</b><small>Entrega en dirección indicada</small></span></label><label><input type="radio" name="delivery" value="pickup"><span><b>Retiro</b><small>Retiro sin costo</small></span></label></div><div id="shippingFields" class="form-grid"><label class="span-2">Dirección<input name="address" required></label><label>Comuna<input name="commune" required></label><label>Región<select name="region" required><option value="">Seleccionar</option><option>Región Metropolitana</option><option>Valparaíso</option><option>O'Higgins</option><option>Maule</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Antofagasta</option><option>Coquimbo</option></select></label></div></div>
-            <div class="form-section"><h3>Medio de pago</h3><div class="choice-grid payment-grid"><label><input type="radio" name="payment" value="Webpay Plus" checked><span><b>Webpay Plus</b><small>Tarjetas bancarias</small></span></label><label><input type="radio" name="payment" value="Tarjeta de crédito"><span><b>Crédito</b><small>Tarjeta bancaria</small></span></label><label><input type="radio" name="payment" value="Tarjeta de débito"><span><b>Débito</b><small>Tarjeta bancaria</small></span></label><label><input type="radio" name="payment" value="Transferencia"><span><b>Transferencia</b><small>Coordinación de pago</small></span></label></div></div>
+            <div class="form-section"><h3>Medio de pago</h3><div class="choice-grid payment-grid"><label><input type="radio" name="payment" value="Webpay Plus Sandbox" checked><span><b>Webpay Plus · demo</b><small>Sandbox: sin cobro real</small></span></label><label><input type="radio" name="payment" value="Tarjeta demo"><span><b>Tarjeta demo</b><small>Simulación local</small></span></label><label><input type="radio" name="payment" value="Débito demo"><span><b>Débito demo</b><small>Simulación local</small></span></label><label><input type="radio" name="payment" value="Transferencia demo"><span><b>Transferencia demo</b><small>Sin datos bancarios</small></span></label></div><p class="demo-payment-note">Ambiente demostrativo: nunca ingreses datos reales de pago.</p></div>
             <label class="save-profile"><input type="checkbox" name="saveProfile" checked> Guardar estos datos en Mi cuenta</label>
             <div id="checkoutErrors" class="form-errors hidden"></div>
           </div>
@@ -225,7 +247,7 @@
     <div class="modal-backdrop" data-close="management"></div>
     <div class="modal-card management-card">
       <button class="modal-close" data-close="management">×</button>
-      <div class="management-head"><div><span class="eyebrow">PANEL NEXOTORQUE</span><h2>Gestión de tienda</h2></div><div class="management-actions"><button class="btn compact" id="exportCatalogBtn">Exportar catálogo</button><label class="btn compact file-btn">Importar catálogo<input id="importCatalogInput" type="file" accept="application/json"></label></div></div>
+      <div class="management-head"><div><span class="eyebrow">PANEL AXORYN</span><h2>Gestión de tienda</h2></div><div class="management-actions"><button class="btn compact" id="exportCatalogBtn">Exportar catálogo</button><label class="btn compact file-btn">Importar catálogo<input id="importCatalogInput" type="file" accept="application/json"></label></div></div>
       <div class="management-tabs" role="tablist"><button data-mtab="dashboard" class="active">Resumen</button><button data-mtab="products">Productos</button><button data-mtab="offers">Ofertas</button><button data-mtab="orders">Pedidos</button></div>
       <section class="management-view" data-mview="dashboard"><div id="managementKpis" class="kpi-grid"></div><div class="management-panels"><div class="admin-panel"><h3>Stock crítico</h3><div id="lowStockList"></div></div><div class="admin-panel"><h3>Actividad comercial</h3><div id="commercialSummary"></div></div></div></section>
       <section class="management-view hidden" data-mview="products"><div class="admin-toolbar"><div class="admin-search"><svg><use href="#i-search"></use></svg><input id="adminProductSearch" placeholder="Buscar producto o SKU"></div><button class="btn accent" id="newProductBtn">+ Nuevo producto</button></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Producto</th><th>SKU</th><th>Precio</th><th>Stock</th><th>Estado</th><th></th></tr></thead><tbody id="adminProductsBody"></tbody></table></div></section>
@@ -240,7 +262,7 @@
   </div>
 
   <button id="chatToggle" class="chat-toggle" aria-label="Abrir asistente TorqueBot"><span class="chat-pulse"></span><svg><use href="#i-chat"></use></svg><span><b>TorqueBot</b><small>Asistente de compra</small></span></button>
-  <section id="chatPanel" class="chat-panel hidden" aria-label="Chatbot NexoTorque">
+  <section id="chatPanel" class="chat-panel hidden" aria-label="Chatbot Axoryn Auto">
     <header><div class="bot-avatar">NT</div><div><b>TorqueBot</b><small>Especialista del catálogo</small></div><span class="online-dot"></span><button id="chatClose" aria-label="Cerrar chat">×</button></header>
     <div id="chatMessages" class="chat-messages"></div>
     <div id="chatQuick" class="chat-quick"><button data-chat="¿Qué productos tienen oferta?">Ofertas</button><button data-chat="¿Cuál es el producto más barato?">Más barato</button><button data-chat="¿Qué scanner OBD2 tienen?">OBD2</button><button data-chat="¿Cómo funciona el despacho?">Despacho</button></div>
