@@ -46,7 +46,8 @@ const CATALOG_EXPANSION=[
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const KEY={products:"axoryn.products.v5",cart:"axoryn.cart.v5",favorites:"axoryn.favorites.v5",viewed:"axoryn.viewed.v5",orders:"axoryn.orders.v5",profile:"axoryn.profile.v5"};
 const load=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}};
-const hasVerifiedProductPhoto=p=>p.id>=101&&p.id<=112&&/^https:\/\//.test(p.image||"");
+const VERIFIED_PRODUCT_IMAGES=new Set(["https://commons.wikimedia.org/wiki/Special:Redirect/file/Photo-CarBattery.jpg","https://commons.wikimedia.org/wiki/Special:Redirect/file/Engine_oil_filter.JPG","https://commons.wikimedia.org/wiki/Special:Redirect/file/Automobile_brake_pad.jpg","https://commons.wikimedia.org/wiki/Special:Redirect/file/Bosch_H7.JPG","https://commons.wikimedia.org/wiki/Special:Redirect/file/Motor_oil.JPG","https://media.takealot.com/covers_images/5dc28ba404c74855990e4e65d653e9e1/s-pdpxl.file","https://img.ltwebstatic.com/v4/j/spmp/2025/08/16/2c/1755314994240f1e3ed43f1bae5c9e2fd166be5719_thumbnail_900x.webp","https://media.falabella.com/falabellaCL/146137649_01/w%3D800%2Ch%3D800%2Cfit%3Dpad","https://images.pexels.com/photos/5506059/pexels-photo-5506059.jpeg?auto=compress&cs=tinysrgb&w=900"]);
+const hasVerifiedProductPhoto=p=>VERIFIED_PRODUCT_IMAGES.has(p.image);
 let products=(load(KEY.products,null) || structuredClone([...SEED_PRODUCTS,...EXTRA_PRODUCTS,...CATALOG_EXPANSION])).filter(hasVerifiedProductPhoto);
 const state={cart:load(KEY.cart,[]),favorites:load(KEY.favorites,[]),viewed:load(KEY.viewed,[]),orders:load(KEY.orders,[]),profile:load(KEY.profile,{}),filters:{query:"",category:"Todos",brand:"Todos",max:500000,stock:false,offers:false,sort:"featured"}};
 let editingProductId=null,pendingImageData=null,promoProductId=null;
